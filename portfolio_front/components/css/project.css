@@ -1,199 +1,64 @@
-/* 전체 슬라이더 */
-.slider-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
-}
-
-/* 좌우 화살표 버튼 */
-.nav-buttons {
+.project-card {
   display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.nav-buttons button {
-  border: none;
-  padding: 0.7rem 1.4rem;
-  border-radius: 50px;
-  font-size: 1.3rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: #f8f9fa;
-  color: #495057;
-}
-
-.nav-buttons button:hover {
-  background: #e9ecef;
-  transform: translateY(-2px);
-}
-
-/* 슬라이드 뷰포트 */
-.slider-window {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* 슬라이드 트랙 */
-.slider-track {
-  display: flex;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* 개별 카드 */
-.slide {
-  flex: 0 0 100%;
-  padding: 2rem;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 3rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.slide:hover {
-  transform: translateY(-5px);
-}
-
-.slide .text-content {
-  flex: 1;
-  text-align: left;
-}
-
-.slide img {
-  width: 50%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.slide h4 {
-  margin-top: 0;
-  font-size: 2.2rem;
-  color: #2d3436;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
-/* 모달 오버레이 */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  backdrop-filter: blur(8px);
+  min-height: 70vh;
+  padding: 60px 80px;
+  gap: 60px;
+
+  background-color: #fafafa;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 모달 콘텐츠 */
-.modal-content {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 20px;
-  max-width: 800px;
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  align-items: flex-start;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+.project-card:hover {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
 }
 
-.modal-content .text-content {
+.card-text {
   flex: 1;
-  text-align: left;
 }
 
-.modal-content img {
-  width: 45%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.card-title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #222;
 }
 
-.modal-content h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: #2d3436;
-  font-weight: 600;
-}
-
-.modal-content p {
-  font-size: 1rem;
-  color: #636e72;
-  margin-bottom: 1.5rem;
+.card-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 24px;
   line-height: 1.6;
 }
 
-.button-group {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.close-button {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  color: #ffffff;
-  transition: all 0.3s ease;
-  border-radius: 50%;
-}
-
-.close-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  transform: rotate(90deg);
-}
-
-.code-btn,
-.deploy-btn {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 25px;
-  font-weight: 600;
+.card-button {
+  padding: 12px 24px;
   font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
 
-.code-btn {
-  background-color: #f8f9fa;
-  color: #2d3436;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.code-btn:hover {
-  background-color: #e9ecef;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.deploy-btn {
-  background-color: #2d3436;
+.card-button:hover {
+  background-color: black;
   color: white;
-  box-shadow: 0 4px 12px rgba(45, 52, 54, 0.2);
 }
 
-.deploy-btn:hover {
-  background-color: #1e2528;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(45, 52, 54, 0.3);
+.card-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }

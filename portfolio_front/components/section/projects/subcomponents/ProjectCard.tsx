@@ -1,59 +1,32 @@
-type ProjectCardProps = {
-  image: string;
-  title: string;
-  onClick: () => void;
-  github?: string;
-  demo?: string;
+import "../../../css/project.css";
+
+type Project = {
+  id: string;
+  name: string;
   description: string;
-  skills: string[];
+  thumbnail: string;
 };
 
-const ProjectCard = ({
-  image,
-  title,
-  onClick,
-  github,
-  demo,
-  description,
-  skills,
-}: ProjectCardProps) => {
+type ProjectProp = {
+  project: Project;
+};
+
+const ProjectCard = ({ project }: ProjectProp) => {
   return (
-    <div className="slide" onClick={onClick}>
-      <div className="text-content">
-        <h4>{title}</h4>
-        <p>{description}</p>
-        <div className="skills">
-          {skills.map((skill, index) => (
-            <span key={index} className="skill-tag">
-              {skill}
-            </span>
-          ))}
-        </div>
-        <div className="button-group">
-          {github && (
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button className="code-btn">코드 보기</button>
-            </a>
-          )}
-          {demo && (
-            <a
-              href={demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button className="deploy-btn">데모 보기</button>
-            </a>
-          )}
-        </div>
+    <section className="project-card" id="pr">
+      <div className="card-text">
+        <h2 className="card-title">{project.name}</h2>
+        <p className="card-description">{project.description}</p>
+        <button className="card-button">More Info</button>
       </div>
-      <img src={image} alt={title} />
-    </div>
+      <div className="card-image-container">
+        <img
+          src={project.thumbnail}
+          alt={`${project.name} thumbnail`}
+          className="card-image"
+        />
+      </div>
+    </section>
   );
 };
 
