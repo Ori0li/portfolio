@@ -110,8 +110,8 @@ const Skill = () => {
                 <motion.img
                   src={skill.icon}
                   alt={skill.name}
-                  width={80}
-                  height={80}
+                  width={60}
+                  height={60}
                   animate={{ scale: 1 }}
                   whileHover={{ scale: 0.8 }}
                   transition={{ duration: 0.2 }}

@@ -1,16 +1,19 @@
 .contact-section {
   padding: 4rem 2rem;
   text-align: center;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #324041;
+  background-color: #d4cdbb;
+  color: #324041;
 }
 
 .contact-heading {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #324041;
 }
 
 .contact-subheading {
-  color: #555;
+  color: #324041;
   margin-bottom: 2rem;
 }
 
@@ -26,7 +29,7 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: #333;
+  color: #324041;
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
@@ -44,7 +47,9 @@
   padding: 0.8rem;
   font-size: 1rem;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #324041;
+  background-color: #d4cdbb;
+  color: #324041;
 }
 
 .contact-button {
@@ -52,12 +57,41 @@
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
-  color: white;
+  background-color: #324041;
+  color: #d4cdbb;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .contact-button:hover {
-  background-color: #0056b3;
+  background-color: #1a1a1a;
+}
+
+/* 다크모드 스타일 */
+.dark .contact-section {
+  background-color: #324041;
+  color: #d4cdbb;
+  border-top: 1px solid #d4cdbb;
+}
+
+.dark .contact-heading,
+.dark .contact-subheading,
+.dark .icon-link {
+  color: #d4cdbb;
+}
+
+.dark .contact-input,
+.dark .contact-textarea {
+  background-color: #324041;
+  color: #d4cdbb;
+  border: 1px solid #d4cdbb;
+}
+
+.dark .contact-button {
+  background-color: #d4cdbb;
+  color: #324041;
+}
+
+.dark .contact-button:hover {
+  background-color: #8faf4d;
 }

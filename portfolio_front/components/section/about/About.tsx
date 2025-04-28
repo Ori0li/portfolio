@@ -1,18 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import "../../css/about.css";
 
 const About = () => {
   const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 100 },
@@ -76,7 +69,6 @@ const About = () => {
       whileInView="visible"
       viewport={{ once: false, amount: 0.3 }}
       variants={containerVariants}
-      style={{ opacity, scale }}
     >
       <div className="about-container">
         <motion.div

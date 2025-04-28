@@ -5,12 +5,18 @@ import {
   FaMailchimp,
   FaRegCommentDots,
 } from "react-icons/fa6";
+import { IoHomeOutline } from "react-icons/io5";
 import "../css/navigator.css";
 
 const Navigator = () => {
   return (
     <nav>
       <ul>
+        <li>
+          <Link href="/" aria-label="홈으로 이동">
+            <IoHomeOutline />
+          </Link>
+        </li>
         <li>
           <Link href="#about">
             <FaCircleUser />

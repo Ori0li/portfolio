@@ -1,22 +1,22 @@
-.project-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 70vh;
-  padding: 60px 80px;
-  gap: 60px;
-
-  background-color: #fafafa;
-  position: relative;
-  z-index: 1;
-  backdrop-filter: blur(10px);
-
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.project-section {
+  background-color: #324041;
+  padding: 48px 30px;
 }
 
-.project-card:hover {
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-  transform: translateY(-4px);
+.project-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+  padding: 48px 64px;
+  margin-bottom: 32px;
+
+  background-color: #d4cdbb;
+  color: #324041;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 .card-text {
@@ -24,30 +24,43 @@
 }
 
 .card-title {
-  font-size: 2rem;
-  margin-bottom: 16px;
-  color: #222;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: inherit;
 }
 
 .card-description {
   font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 24px;
   line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: inherit;
 }
 
 .card-button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  border: 1px solid black;
-  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px 7px 0;
+  background: transparent;
+  color: inherit;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  position: relative;
 }
 
-.card-button:hover {
-  background-color: black;
-  color: white;
+.card-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.card-button:hover::after {
+  width: 100%;
 }
 
 .card-image-container {
@@ -58,7 +71,29 @@
 
 .card-image {
   max-width: 100%;
-  height: auto;
   border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Dark Mode */
+.dark .project-section {
+  background-color: #d4cdbb;
+}
+
+.dark .project-card {
+  background-color: #324041;
+  color: #d4cdbb;
+}
+
+.dark .card-button {
+  border-color: #d4cdbb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    padding: 32px 24px;
+    gap: 32px;
+  }
 }

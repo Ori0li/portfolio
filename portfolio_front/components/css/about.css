@@ -1,20 +1,20 @@
 .about {
   width: 100%;
-  max-width: 1200px;
   height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  background: white;
-  padding: 2rem;
-  margin-left: 10%;
+  background: #d4cdbb;
+  padding: 2rem 10%;
   gap: 3rem;
+  color: #324041;
 }
 
 .about h2 {
   font-size: 3rem;
   align-self: flex-start;
+  color: #324041;
 }
 
 .about-container {
@@ -44,6 +44,7 @@
   font-weight: bold;
   margin-bottom: 1rem;
   text-align: right;
+  color: #324041;
 }
 
 .about-explanation {
@@ -52,7 +53,7 @@
   justify-content: end;
   align-items: flex-end;
   font-size: 1.2rem;
-  color: #666;
+  color: #324041;
   margin: 0.5rem 0;
 }
 
@@ -64,6 +65,22 @@
 
 @media (max-width: 768px) {
   .about {
-    margin-left: 5%;
+    padding: 2rem 5%;
   }
+}
+
+/* 다크모드 스타일 */
+.dark .about {
+  background: #324041;
+  color: #d4cdbb;
+}
+
+.dark .about h2,
+.dark .about-determination,
+.dark .about-explanation {
+  color: #d4cdbb;
+}
+
+.dark .about-explanation strong {
+  color: #8faf4d;
 }
