@@ -1,27 +1,33 @@
-import { useState } from "react";
-import CommentForm from "./subcomponents/CommentForm";
+"use client";
+
+import { useEffect, useState } from "react";
 import "../../components/css/comment.css";
 import CommentList from "./subcomponents/CommentList";
+import { getAllComments } from "@/utils/api";
+import { CommentType } from "@/types/comment";
+import CommentForm from "./subcomponents/CommentForm";
 
-type Comment = {
-  id: number;
-  text: string;
-};
+interface CommentProps {
+  projectId: string;
+}
 
-const Comment = () => {
-  const [comments, setComments] = useState<Comment[]>([]);
+const Comment = ({ projectId }: CommentProps) => {
+  const [comments, setComments] = useState<CommentType[]>([]);
 
-  const handleCommentSubmit = (newComment: string) => {
-    if (newComment.trim()) {
-      setComments([...comments, { id: Date.now(), text: newComment }]);
-    }
+  const fetchComments = async () => {
+    const data = await getAllComments(projectId);
+    setComments(data);
   };
+
+  useEffect(() => {
+    fetchComments();
+  }, [projectId]);
 
   return (
     <div className="comments-section">
       <h2 className="comments-title">댓글</h2>
-      <CommentForm onSubmit={handleCommentSubmit} />
-      <CommentList comments={comments} />
+      <CommentForm projectId={projectId} onCommentAdded={fetchComments} />
+      <CommentList comments={comments} onCommentDeleted={fetchComments} />
     </div>
   );
 };

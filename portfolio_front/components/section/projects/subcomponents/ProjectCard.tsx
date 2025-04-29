@@ -3,15 +3,13 @@ import { BiLinkExternal } from "react-icons/bi";
 import { BsInfoCircle } from "react-icons/bs";
 import { motion } from "framer-motion";
 import "../../../css/project.css";
+import { Project } from "@/types/project";
 
-interface Project {
-  id: string;
-  name: string;
-  description: string;
-  thumbnail: string;
-}
+type ProjectProps = {
+  project: Project;
+};
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project }: ProjectProps) => {
   return (
     <section className="project-card">
       <motion.div
@@ -21,23 +19,25 @@ const ProjectCard = ({ project }: { project: Project }) => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h2 className="card-title">{project.name}</h2>
+        <h2 className="card-title">{project.title}</h2>
         <p className="card-description">{project.description}</p>
         <div style={{ display: "flex", gap: "1rem" }}>
-          <motion.button
+          <motion.a
             className="card-button"
+            href={project.github}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
             Github <FaGithub />
-          </motion.button>
-          <motion.button
+          </motion.a>
+          <motion.a
             className="card-button"
+            href={project.demo}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
             Demo <BiLinkExternal />
-          </motion.button>
+          </motion.a>
           <motion.a
             href={`/project/${project.id}`}
             className="card-button"
@@ -57,8 +57,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
         viewport={{ once: true }}
       >
         <motion.img
-          src={project.thumbnail}
-          alt={`${project.name} thumbnail`}
+          src={project.image}
+          alt={`${project.title} thumbnail`}
           className="card-image"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}

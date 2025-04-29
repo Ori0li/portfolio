@@ -2,27 +2,9 @@
 
 import { motion } from "framer-motion";
 import ProjectCard from "./subcomponents/ProjectCard";
+import { getAllProjects } from "@/utils/api";
 
-const projects = [
-  {
-    id: "p1",
-    name: "Project One",
-    description: "설명 1",
-    thumbnail: "/dosomething.jpg",
-  },
-  {
-    id: "p2",
-    name: "Project Two",
-    description: "설명 2",
-    thumbnail: "/dosomething.jpg",
-  },
-  {
-    id: "p3",
-    name: "Project Three",
-    description: "설명 3",
-    thumbnail: "/dosomething.jpg",
-  },
-];
+const projects = await getAllProjects();
 
 const containerVariants = {
   hidden: {},
