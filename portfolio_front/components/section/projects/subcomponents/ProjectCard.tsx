@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsInfoCircle } from "react-icons/bs";
 import { motion } from "framer-motion";
-import "../../../css/project.css";
+import "../../../styles/project.css";
 import { Project } from "@/types/project";
 
 type ProjectProps = {

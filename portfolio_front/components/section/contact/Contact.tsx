@@ -2,7 +2,7 @@
 
 import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
-import "../../css/contact.css";
+import "../../styles/contact.css";
 
 const Contact = () => {
   const containerVariants = {

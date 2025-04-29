@@ -1,4 +1,4 @@
-import DarkModeToggle from "@/components/utill/DarkModeToggle";
+import DarkModeToggle from "@/components/util/DarkModeToggle";
 
 export default function ProjectLayout({
   children,

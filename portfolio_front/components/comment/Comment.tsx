@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "../../components/css/comment.css";
+import "../../components/styles/comment.css";
 import CommentList from "./subcomponents/CommentList";
 import { getAllComments } from "@/utils/api";
 import { CommentType } from "@/types/comment";

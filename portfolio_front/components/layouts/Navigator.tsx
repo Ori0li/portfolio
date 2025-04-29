@@ -6,7 +6,7 @@ import {
   FaRegCommentDots,
 } from "react-icons/fa6";
 import { IoHomeOutline } from "react-icons/io5";
-import "../css/navigator.css";
+import "../styles/navigator.css";
 
 const Navigator = () => {
   return (

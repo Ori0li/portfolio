@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import "../../css/about.css";
+import "../../styles/about.css";
 
 const About = () => {
   const sectionRef = useRef(null);

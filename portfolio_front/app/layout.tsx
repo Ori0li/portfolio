@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigator from "@/components/layouts/Navigator";
-import DarkModeToggle from "@/components/utill/DarkModeToggle";
+import DarkModeToggle from "@/components/util/DarkModeToggle";
 
 export const metadata: Metadata = {
   title: "Create Next App",

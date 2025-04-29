@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import "../../css/introduce.css";
+import "../../styles/introduce.css";
 
 const Introduce = () => {
   return (
