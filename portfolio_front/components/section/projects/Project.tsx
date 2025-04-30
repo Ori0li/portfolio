@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./subcomponents/ProjectCard";
 import { getAllProjects } from "@/utils/api";
+import "../../styles/project.css";
 
 const projects = await getAllProjects();
 
@@ -26,20 +27,24 @@ const cardVariants = {
 
 const Project = () => {
   return (
-    <motion.section
-      className="project-section"
-      id="project"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.25 }}
-    >
-      {projects.map((p) => (
-        <motion.div key={p.id} variants={cardVariants}>
-          <ProjectCard project={p} />
+    <section id="project" className="project-section">
+      <div className="project-container">
+        <h1 className="project-title">Projects</h1>
+        <motion.div
+          className="project-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+        >
+          {projects.map((p) => (
+            <motion.div key={p.id} variants={cardVariants}>
+              <ProjectCard project={p} />
+            </motion.div>
+          ))}
         </motion.div>
-      ))}
-    </motion.section>
+      </div>
+    </section>
   );
 };
 

@@ -5,15 +5,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  background: #d4cdbb;
+  background: black;
   padding: 2rem 10%;
-  color: #324041;
+  color: #d4cdbb;
 }
 
 .introduce-job {
   width: 100%;
   font-size: 1.5rem;
-  color: #324041;
 }
 
 .introduce-who {
@@ -21,14 +20,12 @@
   display: flex;
   flex-direction: column;
   font-size: 4rem;
-  color: #324041;
 }
 
 .introduce-who span {
   font-weight: 800;
   margin: 0.5rem 0;
   letter-spacing: 0.2rem;
-  color: #324041;
 }
 
 @media (max-width: 768px) {
@@ -39,16 +36,4 @@
   .introduce-who {
     font-size: 3rem;
   }
-}
-
-/* 다크모드 스타일 */
-.dark .introduce {
-  background: #324041;
-  color: #d4cdbb;
-}
-
-.dark .introduce-job,
-.dark .introduce-who,
-.dark .introduce-who span {
-  color: #d4cdbb;
 }

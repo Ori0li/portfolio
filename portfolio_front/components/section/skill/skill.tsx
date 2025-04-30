@@ -5,30 +5,36 @@ import "../../styles/skill.css";
 
 const Skill = () => {
   const skills = {
-    frontend: [
-      { icon: "https://cdn.simpleicons.org/html5/000000", name: "HTML" },
-      { icon: "https://cdn.simpleicons.org/css3/000000", name: "CSS" },
+    languages: [
+      { icon: "https://cdn.simpleicons.org/html5/d4cdbb", name: "HTML" },
+      { icon: "https://cdn.simpleicons.org/css3/d4cdbb", name: "CSS" },
       {
-        icon: "https://cdn.simpleicons.org/javascript/000000",
+        icon: "https://cdn.simpleicons.org/javascript/d4cdbb",
         name: "JavaScript",
       },
       {
-        icon: "https://cdn.simpleicons.org/typescript/000000",
+        icon: "https://cdn.simpleicons.org/typescript/d4cdbb",
         name: "TypeScript",
       },
-      { icon: "https://cdn.simpleicons.org/react/000000", name: "React" },
-      { icon: "https://cdn.simpleicons.org/nextdotjs/000000", name: "NextJS" },
+    ],
+    frontend: [
+      { icon: "https://cdn.simpleicons.org/react/d4cdbb", name: "React" },
+      { icon: "https://cdn.simpleicons.org/nextdotjs/d4cdbb", name: "NextJS" },
+      {
+        icon: "https://cdn.simpleicons.org/tailwindcss/d4cdbb",
+        name: "TailwindCSS",
+      },
     ],
     backend: [
-      { icon: "https://cdn.simpleicons.org/nodedotjs/000000", name: "NodeJS" },
-      { icon: "https://cdn.simpleicons.org/express/000000", name: "Express" },
-      { icon: "https://cdn.simpleicons.org/mysql/000000", name: "MySQL" },
+      { icon: "https://cdn.simpleicons.org/nodedotjs/d4cdbb", name: "NodeJS" },
+      { icon: "https://cdn.simpleicons.org/express/d4cdbb", name: "Express" },
+      { icon: "https://cdn.simpleicons.org/mysql/d4cdbb", name: "MySQL" },
     ],
-    devOps: [
-      { icon: "https://cdn.simpleicons.org/git/000000", name: "Git" },
-      { icon: "https://cdn.simpleicons.org/github/000000", name: "Github" },
+    tools: [
+      { icon: "https://cdn.simpleicons.org/git/d4cdbb", name: "Git" },
+      { icon: "https://cdn.simpleicons.org/github/d4cdbb", name: "Github" },
       {
-        icon: "https://cdn.simpleicons.org/amazonwebservices/000000",
+        icon: "https://cdn.simpleicons.org/amazonwebservices/d4cdbb",
         name: "AWS",
       },
     ],

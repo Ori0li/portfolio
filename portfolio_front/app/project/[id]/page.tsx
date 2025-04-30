@@ -33,26 +33,33 @@ const ProjectPage = () => {
       className="project-container"
     >
       <h1 className="project-title">{project.title}</h1>
-      <img
-        src={`/${project.image}`}
-        alt={`${project.id} 상세 이미지`}
-        className="project-image"
-      />
 
-      <div className="skills-container">
-        <h2 className="skills-title">사용 기술</h2>
-        <div className="skills-list">
-          {project.tag.map((skill, index) => (
-            <span key={index} className="skill-tag">
-              # {skill}
-            </span>
-          ))}
+      <div className="project-main">
+        <div className="project-image-wrapper">
+          <img
+            src={`/${project.image}`}
+            alt={`${project.id} 상세 이미지`}
+            className="project-image"
+          />
         </div>
-      </div>
 
-      <div className="project-content">
-        <h2 className="content-title">프로젝트 상세</h2>
-        <p className="project-description">{project.description}</p>
+        <div className="project-info">
+          <div className="skills-container">
+            <h2 className="skills-title">Skills</h2>
+            <div className="skills-list">
+              {project.tag.map((skill, index) => (
+                <span key={index} className="skill-tag">
+                  # {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="project-content">
+            <h2 className="content-title">Description</h2>
+            <p className="project-description">{project.description}</p>
+          </div>
+        </div>
       </div>
 
       <Comment projectId={project.id.toString()} />

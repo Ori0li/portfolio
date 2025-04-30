@@ -56,7 +56,7 @@ const CommentForm = ({ projectId, onCommentAdded }: CommentFormProps) => {
           className="comment-input"
           value={formData.content}
           onChange={handleChange}
-          placeholder="댓글을 입력하세요"
+          placeholder="피드백을 입력하세요"
           required
         />
         <button type="submit" className="comment-submit">

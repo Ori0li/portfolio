@@ -2,91 +2,94 @@
   width: 100%;
   margin: 0 auto;
   padding: 6rem 2rem;
-  background-color: #d4cdbb;
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 3rem;
 }
 
 .project-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: #324041;
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: white;
   letter-spacing: -0.5px;
+  text-align: center;
+}
+
+.project-main {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.project-image-wrapper {
+  flex: 1;
+  min-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-image {
-  width: 60%;
-  max-width: 800px;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 4rem;
-  object-fit: cover;
-}
-
-.skills-container {
   width: 100%;
-  max-width: 800px;
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.3);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skills-title {
+.project-image:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.project-info {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.skills-container,
+.project-content {
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.skills-title,
+.content-title {
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #324041;
-  text-align: center;
+  color: white;
+  border-bottom: 2px solid white;
 }
 
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  gap: 0.75rem;
 }
 
 .skill-tag {
-  padding: 0.5rem 1rem;
-  background-color: #324041;
-  color: #d4cdbb;
-  border-radius: 2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.project-content {
-  width: 100%;
-  max-width: 800px;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.content-title {
-  font-size: 1.75rem;
+  padding: 0.5rem 0;
+  color: white;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #324041;
-  text-align: center;
 }
 
 .project-description {
   font-size: 1.125rem;
   line-height: 1.8;
-  color: #324041;
-  max-width: 800px;
+  color: white;
+  text-align: justify;
 }
 
 .not-found {
@@ -94,9 +97,10 @@
   padding: 5rem 0;
   color: #324041;
   font-size: 1.25rem;
+  opacity: 0.8;
 }
 
-/* 다크모드 스타일 */
+/* 다크모드 */
 @media (prefers-color-scheme: dark) {
   .project-title,
   .skills-title,
@@ -112,7 +116,10 @@
   }
 }
 
-/* 다크모드 클래스가 적용되었을 때 */
+.dark .project-container {
+  background-color: #324041;
+}
+
 .dark .project-title,
 .dark .skills-title,
 .dark .content-title,
@@ -124,8 +131,4 @@
 .dark .skill-tag {
   background-color: #d4cdbb;
   color: #324041;
-}
-
-.dark .project-container {
-  background-color: #324041;
 }

@@ -1,24 +1,26 @@
 .contact-section {
   padding: 4rem 2rem;
   text-align: center;
-  border-top: 1px solid #324041;
-  background-color: #d4cdbb;
-  color: #324041;
+  border-top: 1px solid #d4cdbb;
+  background-color: black;
+  color: #d4cdbb;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
 }
 
 .contact-heading {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #324041;
 }
 
 .contact-subheading {
-  color: #324041;
   margin-bottom: 2rem;
 }
 
 .contact-links {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 2rem;
   margin-bottom: 3rem;
@@ -29,8 +31,7 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: #324041;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   transition: color 0.3s ease;
 }
 

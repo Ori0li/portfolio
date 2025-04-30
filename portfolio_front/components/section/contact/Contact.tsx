@@ -34,21 +34,20 @@ const Contact = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <motion.h2 className="contact-heading" variants={itemVariants}>
-        Contact Me
-      </motion.h2>
-      <motion.p className="contact-subheading" variants={itemVariants}>
-        Let's build something awesome together!
-      </motion.p>
+      <motion.div variants={itemVariants}>
+        <motion.h2 className="contact-heading">Contact Me</motion.h2>
+        <motion.p className="contact-subheading">
+          Let's build something awesome together!
+        </motion.p>
+      </motion.div>
 
-      {/* 연락 수단 */}
       <motion.div className="contact-links" variants={itemVariants}>
         <motion.p
           className="icon-link"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <FaEnvelope size={24} /> gogo5125@naver.com
+          <FaEnvelope size={26} /> gogo5125@naver.com
         </motion.p>
 
         <motion.a
@@ -59,7 +58,7 @@ const Contact = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <FaGithub size={24} /> GitHub
+          <FaGithub size={26} /> GitHub
         </motion.a>
       </motion.div>
     </motion.section>

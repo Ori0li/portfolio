@@ -1,5 +1,3 @@
-import DarkModeToggle from "@/components/util/DarkModeToggle";
-
 export default function ProjectLayout({
   children,
 }: {
@@ -8,7 +6,6 @@ export default function ProjectLayout({
   return (
     <div className="min-h-screen bg-[#d4cdbb] dark:bg-[#324041] text-[#324041] dark:text-[#d4cdbb]">
       <main>{children}</main>
-      <DarkModeToggle />
     </div>
   );
 }

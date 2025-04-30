@@ -25,7 +25,7 @@ const Comment = ({ projectId }: CommentProps) => {
 
   return (
     <div className="comments-section">
-      <h2 className="comments-title">댓글</h2>
+      <h2 className="comments-title">피드백</h2>
       <CommentForm projectId={projectId} onCommentAdded={fetchComments} />
       <CommentList comments={comments} onCommentDeleted={fetchComments} />
     </div>
