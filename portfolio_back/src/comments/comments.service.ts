@@ -33,8 +33,10 @@ export class CommentsService {
 
   async findAll() {
     const allComments = await this.commentRepository.find({
+      relations: ['project'],
       order: { createdAt: 'DESC' },
     });
+    console.log(allComments);
     return {
       success: true,
       message: '댓글이 성공적으로 조회되었습니다.',

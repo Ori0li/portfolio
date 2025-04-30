@@ -3,8 +3,11 @@ import "./globals.css";
 import Navigator from "@/components/layouts/Navigator";
 
 export const metadata: Metadata = {
-  title: "포트폴리오",
-  description: "개발자 포트폴리오 웹사이트",
+  icons: {
+    icon: "/logo.png",
+  },
+  title: "JUN Portfolio",
+  description: "박준용 포트폴리오 웹사이트",
 };
 
 export default function RootLayout({

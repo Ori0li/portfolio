@@ -1,5 +1,6 @@
 import { CommentType } from "@/types/comment";
 import { deleteComment } from "@/utils/api";
+import { FaPerson, FaTrash } from "react-icons/fa6";
 
 interface CommentListProps {
   comments: CommentType[];
@@ -22,12 +23,14 @@ const CommentList = ({ comments, onCommentDeleted }: CommentListProps) => {
       {comments.map((comment) => (
         <div key={comment.id} className="comment-item">
           <div className="comment-header">
-            <p className="comment-author">👤 {comment.author}</p>
+            <p className="comment-author">
+              <FaPerson /> {comment.author}
+            </p>
             <button
               className="comment-delete"
               onClick={() => handleDelete(Number(comment.id))}
             >
-              삭제
+              <FaTrash />
             </button>
           </div>
           <p className="comment-content">{comment.content}</p>

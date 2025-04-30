@@ -38,10 +38,8 @@ export const deleteProject = async (id: string) => {
 
 // 댓글
 
-export const getAllComments = async (
-  projectId: string
-): Promise<CommentType[]> => {
-  const res = await axios.get(`${API_URL}/comments?project=${projectId}`);
+export const getAllComments = async (): Promise<CommentType[]> => {
+  const res = await axios.get(`${API_URL}/comments`);
   return res.data.data;
 };
 

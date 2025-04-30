@@ -2,11 +2,11 @@
 
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import "./projectDetail.css";
 import { getProject } from "@/utils/api";
 import { useState, useEffect } from "react";
 import { Project } from "@/types/project";
 import Comment from "@/components/comment/Comment";
+import "../../../styles/projectDetail.css";
 
 const ProjectPage = () => {
   const params = useParams();

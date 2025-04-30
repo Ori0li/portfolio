@@ -15,8 +15,12 @@ const Comment = ({ projectId }: CommentProps) => {
   const [comments, setComments] = useState<CommentType[]>([]);
 
   const fetchComments = async () => {
-    const data = await getAllComments(projectId);
-    setComments(data);
+    const data = await getAllComments();
+    const filtered = data.filter(
+      (comment) => comment.project.id === Number(projectId)
+    );
+    console.log(filtered);
+    setComments(filtered);
   };
 
   useEffect(() => {
