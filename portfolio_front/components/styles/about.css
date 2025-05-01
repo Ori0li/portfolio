@@ -1,83 +1,144 @@
+/* 기본 레이아웃 */
 .about {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background: black;
-  padding: 2rem 10%;
-  gap: 3rem;
-  color: white;
+  background: #000000;
+  padding: 4rem 10%;
+  gap: 4rem;
+  color: #d4cdbb;
 }
 
-.about h2 {
-  font-size: 3rem;
-  align-self: flex-start;
-}
-
+/* 컨테이너 스타일 */
 .about-container {
   width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  padding: 3rem;
+}
+
+/* 헤더 영역 */
+.about-header {
+  width: 100%;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  align-items: flex-start;
 }
 
 .about-title {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding-bottom: 2rem;
-  position: relative;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #d4cdbb;
+  margin-bottom: 1.5rem;
 }
 
-.about-content {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.about-subtitle {
+  font-size: 1.4rem;
+  color: #d4cdbb;
+  opacity: 0.9;
+  font-weight: 300;
 }
 
-.about-determination {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: right;
+.underline {
+  height: 3px;
+  background: #d4cdbb;
+  margin-top: 1rem;
+  width: 100%;
 }
 
+/* 카드 스타일 */
+.about-card {
+  padding: 2.5rem;
+  border-right: 1px solid #d4cdbb;
+  border-left: 1px solid #d4cdbb;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.about-card p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #d4cdbb;
+  padding: 0.8rem 1.5rem;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  width: 100%;
+  text-align: center;
+}
+
+/* 인용구 스타일 */
+.about-quote {
+  margin-top: 3rem;
+  padding: 1.5rem;
+}
+
+.about-quote blockquote {
+  font-size: 3rem;
+  line-height: 1.8;
+  color: #d4cdbb;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* 설명 영역 */
 .about-explanation {
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: flex-end;
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  color: #d4cdbb;
 }
 
 .about-explanation strong {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #6e8b3d;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #d4cdbb;
+  border-bottom: 2px solid rgba(212, 205, 187, 0.3);
 }
 
+/* 반응형 스타일 */
 @media (max-width: 768px) {
   .about {
     padding: 2rem 5%;
   }
-}
 
-/* 다크모드 스타일 */
-.dark .about {
-  background: #324041;
-  color: #d4cdbb;
-}
+  .about-container {
+    padding: 2rem;
+    gap: 3rem;
+  }
 
-.dark .about h2,
-.dark .about-determination,
-.dark .about-explanation {
-  color: #d4cdbb;
-}
+  .about-title {
+    font-size: 3rem;
+  }
 
-.dark .about-explanation strong {
-  color: #8faf4d;
+  .about-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .about-card p {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .about-quote blockquote {
+    font-size: 1.3rem;
+  }
 }

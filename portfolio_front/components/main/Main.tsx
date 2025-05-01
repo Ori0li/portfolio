@@ -1,3 +1,4 @@
+import Navigator from "../layouts/Navigator";
 import About from "../section/about/About";
 import Contact from "../section/contact/Contact";
 import Introduce from "../section/introduce/Introduce";
@@ -12,6 +13,7 @@ const Main = () => {
       <Skill />
       <Project />
       <Contact />
+      <Navigator />
     </div>
   );
 };

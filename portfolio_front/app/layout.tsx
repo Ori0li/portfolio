@@ -17,10 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>
-        <Navigator />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

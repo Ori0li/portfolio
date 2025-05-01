@@ -3,16 +3,17 @@
   margin: 0 auto;
   padding: 6rem 2rem;
   background-color: black;
+  color: #d4cdbb;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  position: relative;
 }
 
 .project-title {
   font-size: 2.75rem;
   font-weight: 800;
-  color: white;
   letter-spacing: -0.5px;
   text-align: center;
 }
@@ -68,8 +69,7 @@
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: white;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #d4cdbb;
 }
 
 .skills-list {
@@ -80,7 +80,6 @@
 
 .skill-tag {
   padding: 0.5rem 0;
-  color: white;
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -88,47 +87,33 @@
 .project-description {
   font-size: 1.125rem;
   line-height: 1.8;
-  color: white;
   text-align: justify;
 }
 
 .not-found {
   text-align: center;
   padding: 5rem 0;
-  color: #324041;
+  color: #d4cdbb;
   font-size: 1.25rem;
   opacity: 0.8;
 }
 
-/* 다크모드 */
-@media (prefers-color-scheme: dark) {
-  .project-title,
-  .skills-title,
-  .content-title,
-  .project-description,
-  .not-found {
-    color: #d4cdbb;
-  }
-
-  .skill-tag {
-    background-color: #d4cdbb;
-    color: #324041;
-  }
+.comment-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: black;
+  border: 2px solid #d4cdbb;
+  padding: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  z-index: 100;
 }
 
-.dark .project-container {
-  background-color: #324041;
-}
-
-.dark .project-title,
-.dark .skills-title,
-.dark .content-title,
-.dark .project-description,
-.dark .not-found {
-  color: #d4cdbb;
-}
-
-.dark .skill-tag {
+.comment-button:hover {
   background-color: #d4cdbb;
-  color: #324041;
+  border: 2px solid black;
+  color: black;
 }

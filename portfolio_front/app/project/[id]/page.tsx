@@ -3,23 +3,38 @@
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { getProject } from "@/utils/api";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Project } from "@/types/project";
-import Comment from "@/components/comment/Comment";
+import CommentModal from "@/components/comment/CommentModal";
 import "../../../styles/projectDetail.css";
+import { FaComment } from "react-icons/fa6";
 
 const ProjectPage = () => {
   const params = useParams();
   const [project, setProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    const fetchProject = async () => {
-      if (!params?.id) return;
+  const fetchProject = useCallback(async () => {
+    if (!params?.id) return;
+    try {
       const data = await getProject(params.id as string);
       setProject(data);
-    };
-    fetchProject();
+    } catch (error) {
+      console.error("프로젝트를 불러오는데 실패했습니다:", error);
+    }
   }, [params?.id]);
+
+  useEffect(() => {
+    fetchProject();
+  }, [fetchProject]);
+
+  const handleModalOpen = useCallback(() => {
+    setIsModalOpen(true);
+  }, []);
+
+  const handleModalClose = useCallback(() => {
+    setIsModalOpen(false);
+  }, []);
 
   if (!project) {
     return <div className="not-found">프로젝트를 찾을 수 없습니다.</div>;
@@ -38,8 +53,9 @@ const ProjectPage = () => {
         <div className="project-image-wrapper">
           <img
             src={`/${project.image}`}
-            alt={`${project.id} 상세 이미지`}
+            alt={`${project.title} 상세 이미지`}
             className="project-image"
+            loading="lazy"
           />
         </div>
 
@@ -62,7 +78,19 @@ const ProjectPage = () => {
         </div>
       </div>
 
-      <Comment projectId={project.id.toString()} />
+      <button
+        className="comment-button"
+        onClick={handleModalOpen}
+        aria-label="댓글 보기"
+      >
+        <FaComment />
+      </button>
+
+      <CommentModal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        projectId={project.id.toString()}
+      />
     </motion.div>
   );
 };

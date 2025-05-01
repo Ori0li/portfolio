@@ -1,0 +1,114 @@
+/* 로딩 페이지 스타일 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-container::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 205, 187, 0.1) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  animation: rotate 20s linear infinite;
+}
+
+.loading-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.progress-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.progress-circle svg {
+  transform: rotate(-90deg);
+  filter: drop-shadow(0 0 10px rgba(212, 205, 187, 0.3));
+}
+
+.progress-circle circle {
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #d4cdbb;
+  text-shadow: 0 0 10px rgba(212, 205, 187, 0.3);
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  color: #d4cdbb;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.loading-text::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4cdbb, transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .progress-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .progress-text {
+    font-size: 1.2rem;
+  }
+
+  .loading-text {
+    font-size: 1rem;
+  }
+}
